@@ -21,6 +21,16 @@ uint16_t b16swap( uint16_t num )
     return (rtv = (((rtv >> 8) | b) << 8) | a);
 }
 
+uint8_t b8swap( uint8_t num )
+{
+    uint8_t rtv, a, b;
+
+    rtv = 0x00;
+    a   = (num >> 4) & 0xf;
+    b   = num & 0xf;
+    return (rtv = (((rtv >> 4) | b) << 4) | a);
+}
+
 int main( int argc, char **argv )
 {
     // 3232235621 = 1100000010101000 0000000001100101
@@ -30,5 +40,6 @@ int main( int argc, char **argv )
     // 3232235621 = 0000000001100101 1100000010101000
     printf( "%u\n", b32swap( 3232235621 ) );
     printf( "%u\n", b16swap( 46863 ) );
+    printf( "%u\n", b8swap( 223 ) );
     return 0;
 }
