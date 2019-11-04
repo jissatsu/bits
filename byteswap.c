@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
 
-uint32_t b32swap( uint32_t num )
+// swap 2 halves of a 32 bit int
+uint32_t bh32swap( uint32_t num )
 {
     uint32_t rtv, a, b;
 
@@ -11,7 +12,8 @@ uint32_t b32swap( uint32_t num )
     return (rtv = (((rtv >> 16) | b) << 16) | a);
 }
 
-uint16_t b16swap( uint16_t num )
+// swap 2 halves of a 16 bit int
+uint16_t bh16swap( uint16_t num )
 {
     uint16_t rtv, a, b;
 
@@ -21,7 +23,8 @@ uint16_t b16swap( uint16_t num )
     return (rtv = (((rtv >> 8) | b) << 8) | a);
 }
 
-uint8_t b8swap( uint8_t num )
+// swap 2 halves of a 8 bit int
+uint8_t bh8swap( uint8_t num )
 {
     uint8_t rtv, a, b;
 
@@ -35,11 +38,11 @@ int main( int argc, char **argv )
 {
     // 3232235621 = 1100000010101000 0000000001100101
     
-    // b32swap( 3232235621 )
+    // bh32swap( 3232235621 )
 
     // 3232235621 = 0000000001100101 1100000010101000
-    printf( "%u\n", b32swap( 3232235621 ) );
-    printf( "%u\n", b16swap( 46863 ) );
-    printf( "%u\n", b8swap( 223 ) );
+    printf( "%u\n", bh32swap( 3232235621 ) );
+    printf( "%u\n", bh16swap( 46863 ) );
+    printf( "%u\n", bh8swap( 223 ) );
     return 0;
 }
