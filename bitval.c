@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include <stdint.h>
 
-int8_t bit_pos( int32_t ent, int8_t pos )
+int8_t bit_val( int32_t ent, int8_t pos )
 {
     int8_t bit;
     if ( ent <= 0 )
@@ -16,6 +16,6 @@ int8_t bit_pos( int32_t ent, int8_t pos )
 
 int main( int argc, char **argv )
 {
-    printf( "%d\n", bit_pos( 20, 5 ) );
+    printf( "%d\n", bit_val( 20, 5 ) );
     return 0;
 }
