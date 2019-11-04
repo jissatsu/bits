@@ -15,5 +15,6 @@ uint32_t host32BE( uint32_t num )
 int main( int argc, char **argv )
 {
     printf( "%u\n", host32BE( 3232235621 ) );
+    printf( "%u\n", htonl( 3232235621 ) );
     return 0;
 }
