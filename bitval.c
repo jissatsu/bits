@@ -1,6 +1,7 @@
 #include "stdio.h"
 #include <stdint.h>
 
+// get value of bit at position 'pos'
 int8_t bit_val( int32_t ent, int8_t pos )
 {
     int8_t bit;
