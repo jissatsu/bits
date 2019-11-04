@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
+// swap 2 halves of a 32 bit int
 uint32_t b32swap( uint32_t num )
 {
     uint32_t rtv, a, b;
@@ -11,6 +12,7 @@ uint32_t b32swap( uint32_t num )
     return (rtv = (((rtv >> 16) | b) << 16) | a);
 }
 
+// swap 2 halves of a 16 bit int
 uint16_t b16swap( uint16_t num )
 {
     uint16_t rtv, a, b;
@@ -21,6 +23,7 @@ uint16_t b16swap( uint16_t num )
     return (rtv = (((rtv >> 8) | b) << 8) | a);
 }
 
+// swap 2 halves of a 8 bit int
 uint8_t b8swap( uint8_t num )
 {
     uint8_t rtv, a, b;
