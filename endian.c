@@ -12,9 +12,22 @@ uint32_t host32BE( uint32_t num )
     return rtv;
 }
 
+// convert 16 bit integer to big endian
+uint16_t host16BE( uint16_t num )
+{
+    uint16_t rtv;
+
+    rtv = 0x0000;
+    rtv = (((rtv >> 8) | (num & 0xff)) << 8) | ((num >> 8) & 0xff);
+    return rtv;
+}
+
 int main( int argc, char **argv )
 {
     printf( "%u\n", host32BE( 3232235621 ) );
     printf( "%u\n", htonl( 3232235621 ) );
+    
+    printf( "%u\n", host16BE( 46863 ) );
+    printf( "%u\n", htons( 46863 ) );
     return 0;
 }
